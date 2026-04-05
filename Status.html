@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Status - FoodSave Indonesia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#cbffc2",
+                    "tertiary": "#734e00",
+                    "tertiary-container": "#926500",
+                    "on-tertiary-container": "#ffefda",
+                    "on-primary-fixed": "#002204",
+                    "on-secondary-container": "#5e2c00",
+                    "on-secondary-fixed-variant": "#723600",
+                    "inverse-primary": "#88d982",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1a",
+                    "secondary-fixed": "#ffdcc6",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f3f4f1",
+                    "surface-variant": "#e2e3e0",
+                    "surface-container-high": "#e8e8e5",
+                    "on-primary-fixed-variant": "#005312",
+                    "surface-bright": "#f9f9f6",
+                    "surface-container-highest": "#e2e3e0",
+                    "surface-tint": "#1b6d24",
+                    "primary-fixed": "#a3f69c",
+                    "surface": "#f9f9f6",
+                    "primary-container": "#2e7d32",
+                    "primary-fixed-dim": "#88d982",
+                    "outline-variant": "#bfcaba",
+                    "on-secondary-fixed": "#311300",
+                    "tertiary-fixed": "#ffdeac",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "secondary": "#964900",
+                    "on-tertiary-fixed": "#281900",
+                    "background": "#f9f9f6",
+                    "surface-dim": "#dadad7",
+                    "surface-container": "#eeeeeb",
+                    "inverse-surface": "#2f312f",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#0d631b",
+                    "on-surface": "#1a1c1a",
+                    "secondary-container": "#fc820c",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb786",
+                    "inverse-on-surface": "#f1f1ee",
+                    "outline": "#707a6c",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#ffba38",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#40493d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .tonal-transition { transition: background-color 0.3s ease; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f9f9f6]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img alt="Profile" data-alt="close-up portrait of a smiling young Indonesian man with a friendly expression in a brightly lit modern setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCMWTmxxLxxNb3OtVSQxAqP1z5HlhtEQiOBP8uD8-AiMC10ah9edtBp5PmAsHf57r8R2LF7uMmWgjo1hhbE-S3wL2xvSTd3ZuLdg8Doe-Aegkl6RoT9yKpGuxi6q_8QjqP6SKLtakUanROzTr7hSNH00Zcz2dZvj5KYFWyoZFvuHKREAocKS6uZP_AMXnsK9l2IRgzo3gd6hIF3MpOentRfql-pWy-DIE4OuS6mUMyjI9tYGWUmaEL2-uD4cL2maNTx7uL7eISIuZL"/>
+</div>
+<h1 class="font-headline font-extrabold tracking-tighter text-green-900 text-lg">FoodSave Indonesia</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-stone-200/50 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-green-800" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Order Progress Header -->
+<section class="mb-10 text-center">
+<span class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label text-xs font-bold uppercase tracking-widest mb-4">
+                Active Order
+            </span>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface mb-2">Order Tracking</h2>
+<p class="text-on-surface-variant font-medium">Order #FS-8829103 • Today, 14:20</p>
+</section>
+<!-- Status Stepper - Bento Style -->
+<div class="grid grid-cols-1 gap-4 mb-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl relative overflow-hidden">
+<!-- Asymmetrical leaf curve background element -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-fixed/20 rounded-full blur-3xl"></div>
+<div class="flex flex-col gap-8 relative z-10">
+<!-- Status Step 1: Completed -->
+<div class="flex items-start gap-4">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-0.5 h-12 bg-primary mt-2"></div>
+</div>
+<div class="pt-1">
+<h3 class="font-headline font-bold text-lg text-primary">Menunggu Konfirmasi</h3>
+<p class="text-on-surface-variant text-sm">Restoran sedang menerima pesanan Anda</p>
+<span class="text-xs font-bold text-primary/60 mt-1 block">14:22</span>
+</div>
+</div>
+<!-- Status Step 2: Active -->
+<div class="flex items-start gap-4">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full border-4 border-secondary-container bg-surface flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined animate-pulse" data-icon="restaurant">restaurant</span>
+</div>
+<div class="w-0.5 h-12 bg-surface-container-highest mt-2"></div>
+</div>
+<div class="pt-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">Siap Diambil</h3>
+<p class="text-on-surface-variant text-sm">Pesanan sedang disiapkan untuk Anda</p>
+<div class="mt-3 inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span>
+                                Estimasi: 12 Menit
+                            </div>
+</div>
+</div>
+<!-- Status Step 3: Pending -->
+<div class="flex items-start gap-4">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-stone-400">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+</div>
+</div>
+<div class="pt-1">
+<h3 class="font-headline font-bold text-lg text-stone-400">Selesai</h3>
+<p class="text-stone-400 text-sm">Konfirmasi pengambilan pesanan</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pickup Code Section -->
+<div class="bg-primary-container p-8 rounded-xl text-on-primary-container text-center mb-8 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<p class="font-label text-xs uppercase tracking-[0.2em] mb-4 font-bold opacity-80">Kode Pengambilan</p>
+<h4 class="font-headline text-5xl font-extrabold tracking-tighter mb-4">FS-12345</h4>
+<div class="flex justify-center gap-2">
+<div class="bg-on-primary-container/20 px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="qr_code_2">qr_code_2</span>
+<span class="text-sm font-bold">Tunjukkan QR</span>
+</div>
+</div>
+</div>
+<!-- Merchant & Items Card -->
+<div class="bg-surface-container-low rounded-xl p-6 mb-8">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-xl overflow-hidden shadow-sm">
+<img alt="Bakery" data-alt="Exterior of a cozy modern bakery with glass windows showcasing fresh golden pastries and warm interior lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmRqzgsAqqJKnGZh9zNA24dfN7SA6b0ZVrcoTr_cYvwtvqV7B_HhArwrmzvOTRHofkZlfrRhHCOI0kYsiFbpec7DK3Kz7yFXUaJMLB_JbS1fv1st9ogfn_OE7JB1UZtRLJqQIuZoEu0qf3FUH26rnE81ewyvej79yeKaz2D38cliR2Dq77V93MDmjMbyIISxXvAuUsea4Na11xcd__mmT40NATrCUcoAHADkFY19FNLwch8HyTA0r5hNZs6-sDwz8KV1MpEsGSHGs1"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl">L'Artisan Boulangerie</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                        Kemang, Jakarta Selatan
+                    </p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center bg-surface-container-lowest p-4 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden">
+<img alt="Bread" data-alt="basket of assorted artisanal sourdough breads and crusty baguettes with flour dusting on a rustic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiTKBpFt6rJ6qWq4Z2qDo1qUwj_UnGYfPA0_jOshW33HBDVY9Rp7Y-YhgvPN9g3m2mYhmua61nO3co9KChj0QBPrXhhnb-DflUUr1Wo5kbETeBQYjKFXHtjIA3NWcOS2FE4aPAIt_-tMEblpzaL-72T1PtumyRf2J4fH6wrKkWVvxakFrfobKtcclWIhySZAUCbwlV8kNxpJXIDIEuojHaKS813XNkYnG1rWLK1ts7uQq2rQKdJgPmNtKClSPlS-aDO6jMyiKZdJ5i"/>
+</div>
+<div>
+<p class="font-bold">Surprise Bag: Pastry</p>
+<p class="text-xs text-on-surface-variant">2-3 Items Mixed</p>
+</div>
+</div>
+<p class="font-bold text-primary">x1</p>
+</div>
+<div class="pt-4 flex justify-between items-center border-t border-outline-variant/15">
+<span class="font-bold">Total Pembayaran</span>
+<span class="font-headline font-extrabold text-xl">Rp 35.000</span>
+</div>
+</div>
+</div>
+<!-- Location Map Placeholder -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden relative h-48 mb-8">
+<img alt="Map" class="w-full h-full object-cover opacity-50 grayscale" data-alt="minimalist aesthetic map view of city streets with clean lines and soft grey and green color palette" data-location="Jakarta, Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeNqTGV6gBrTeZPcIrhYoK0ReESig_BRHC93dJkz7uFOXwV22YdE8AZb8yEeMZdpHdfCFTPaFs9kCHW_Uz9iLEBWhxF6RGqugH2fE-8K57w36vHJwagpQkJfpcZZLyXS8Yk9D-KMN6PZG_3Z7bwaFF20DtQnI-kmI-TTVBCIaZ3co0i-LrlY_lWIswTbMasHd8ht93k8dl9LFRd-mKGtpDmY1FciOHGWrnEJjD__EbTPvoSFRuDjkZhZAVwtUD8PtgaNZKBxDiYwZE"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-primary/5">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg mb-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<button class="bg-white text-on-surface px-4 py-2 rounded-full text-xs font-bold shadow-md hover:bg-surface-container-high transition-colors">
+                    Petunjuk Arah
+                </button>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-surface-container-highest text-on-surface py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-stone-200 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+                Bantuan
+            </button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary py-4 rounded-full font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                Hubungi Toko
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-8 pt-3 bg-[#f9f9f6]/80 backdrop-blur-xl z-50 rounded-t-[3rem] shadow-[0_-12px_32px_rgba(26,28,26,0.06)]">
+<a class="flex flex-col items-center justify-center text-stone-500 px-5 py-2 hover:text-green-600 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Manrope'] font-semibold text-[11px] uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 px-5 py-2 hover:text-green-600 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-['Manrope'] font-semibold text-[11px] uppercase tracking-widest">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffdcc6] text-orange-900 rounded-full px-6 py-2 active:scale-90 duration-200 shadow-sm" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="steaming" style="font-variation-settings: 'FILL' 1;">mountain_steam</span>
+<span class="font-['Manrope'] font-bold text-[11px] uppercase tracking-widest">Status</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 px-5 py-2 hover:text-green-600 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history">history</span>
+<span class="font-['Manrope'] font-semibold text-[11px] uppercase tracking-widest">History</span>
+</a>
+</nav>
+</body></html>
