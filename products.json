@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "nama": "Paket Nasi Campur Hemat",
+        "kategori": "Makanan Berat",
+        "harga": 15000,
+        "harga_asli": 25000,
+        "stok": 5,
+        "deskripsi": "Nasi campur lengkap dengan lauk pauk pilihan.",
+        "co2_saved": "0.8",
+        "created_at": "2026-04-19 10:00:00"
+    },
+    {
+        "id": 2,
+        "nama": "Ayam Goreng Kalasan",
+        "kategori": "Makanan Berat",
+        "harga": 22500,
+        "harga_asli": 35000,
+        "stok": 3,
+        "deskripsi": "Ayam goreng bumbu Kalasan yang gurih dan renyah.",
+        "co2_saved": "1.2",
+        "created_at": "2026-04-19 11:30:00"
+    },
+    {
+        "id": 3,
+        "nama": "Roti Croissant Cokelat",
+        "kategori": "Roti & Kue",
+        "harga": 8000,
+        "harga_asli": 15000,
+        "stok": 8,
+        "deskripsi": "Croissant isi cokelat premium, dipanggang pagi ini.",
+        "co2_saved": "0.3",
+        "created_at": "2026-04-19 08:00:00"
+    }
+]
